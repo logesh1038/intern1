@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicates from Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Remove Duplicates from Array</h2>
+    <p id="setMethod"></p>
+    <p id="loopMethod"></p>
+
+    <script>
+        let arr = [1, 2, 3, 2, 4, 3, 5];
+
+       
+        let uniqueArray = [...new Set(arr)];
+        document.getElementById('setMethod').textContent = "Using Set: " + uniqueArray;
+
+        
+        function removeDuplicates(arr) {
+            let unique = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (!unique.includes(arr[i])) {
+                    unique.push(arr[i]);
+                }
+            }
+            return unique;
+        }
+
+        document.getElementById('loopMethod').textContent = "Using Loop: " + removeDuplicates(arr);
+    </script>
+</body>
+</html>

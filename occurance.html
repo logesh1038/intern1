@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Occurrences in Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Count Occurrences in Array</h2>
+    <pre id="result"></pre>
+
+    <script>
+        function countOccurrences(arr) {
+            let count = {};
+            for (let i = 0; i < arr.length; i++) {
+                let value = arr[i];
+                if (count[value]) {
+                    count[value]++;
+                } else {
+                    count[value] = 1;
+                }
+            }
+            return count;
+        }
+
+        const arr = [1, 2, 2, 3, 3, 3, 4];
+        const occurrences = countOccurrences(arr);
+
+        document.getElementById('result').textContent = JSON.stringify(occurrences, null, 2);
+    </script>
+</body>
+</html>

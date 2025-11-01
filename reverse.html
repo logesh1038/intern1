@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Reverse String Examples</h2>
+    <p id="method1"></p>
+    <p id="method2"></p>
+
+    <script>
+        function reversestr(str) {
+            return str.split("").reverse().join("");
+        }
+
+        function reverseString(str) {
+            let reversed = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                reversed += str[i];
+            }
+            return reversed;
+        }
+
+        const text = "logesh";
+        document.getElementById('method1').textContent = "Using split & reverse: " + reversestr(text);
+        document.getElementById('method2').textContent = "Using for loop: " + reverseString(text);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Prime Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Prime Number Check</h2>
+    <p id="prime7"></p>
+    <p id="prime10"></p>
+
+    <script>
+        function isPrime(num) {
+            if (num <= 1) {
+                return false;
+            }
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        document.getElementById('prime7').textContent = "Is 7 prime? " + isPrime(7);
+        document.getElementById('prime10').textContent = "Is 10 prime? " + isPrime(10);
+    </script>
+</body>
+</html>
