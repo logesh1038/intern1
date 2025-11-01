@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci Sequence</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    input, button { padding: 10px; font-size: 16px; margin: 5px; }
+    #output { font-weight: bold; margin-top: 20px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h1>Fibonacci Sequence Generator</h1>
+  <p>Enter the number of terms:</p>
+  <input type="number" id="numInput" placeholder="Enter a number" min="1">
+  <button onclick="generateFib()">Generate</button>
+
+  <p id="output"></p>
+
+  <script>
+    function fib(num){
+        let a = 0, b = 1;
+        let result = [];
+        for (var i = 0; i < num; i++) {   // use i < num to get exact number of terms
+            result.push(a);
+            let next = a + b;
+            a = b;
+            b = next;
+        }
+        return result;
+    }
+
+    function generateFib() {
+        let num = parseInt(document.getElementById('numInput').value);
+        if (isNaN(num) || num <= 0) {
+            document.getElementById('output').innerText = "Please enter a valid positive number.";
+            return;
+        }
+        let sequence = fib(num);
+        document.getElementById('output').innerText = "Fibonacci Sequence: " + sequence.join(", ");
+    }
+  </script>
+</body>
+</html>

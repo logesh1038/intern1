@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Clone </title>
+</head>
+<body>
+  <h2>Deep Clone Example</h2>
+  <p>Enter an object :</p>
+  <input type="text" id="objectInput" value='{"name": "Kanishka", "skills": ["JS", "Python"]}'>
+  <button onclick="deepCloneDOM()">Clone Object</button>
+  <h3>Cloned Output:</h3>
+  <p id="output"></p>
+
+  <script>
+    function deepClone(obj) {
+      return JSON.parse(JSON.stringify(obj));
+    }
+
+    function deepCloneDOM() {
+      const input = document.getElementById('objectInput').value;
+      try {
+        const obj = JSON.parse(input);
+        const clone = deepClone(obj);
+        document.getElementById('output').textContent = JSON.stringify(clone);
+      } catch (error) {
+        document.getElementById('output').textContent = 'Invalid input! Please enter a valid JSON object.';
+      }
+    }
+  </script>
+</body>
+</html>
